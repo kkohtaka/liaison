@@ -1,0 +1,25 @@
+{
+  "name": "liaison",
+  "version": "0.0.0",
+  "description": "A Message Passing Library for Chrome Extension",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kohtaka/liaison.git"
+  },
+  "keywords": [
+    "Chrome Extension",
+    "crx"
+  ],
+  "author": "Kazumasa Kohtaka <kkohtaka@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt-contrib-connect": "~0.3.0",
+    "grunt-cli": "~0.1.9",
+    "grunt": "~0.4.1",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-livereload": "~0.1.2",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-jslint": "~0.2.6",
+    "grunt-regarde": "~0.1.1"
+  }
+}

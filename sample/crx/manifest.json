@@ -1,0 +1,19 @@
+{
+  "name": "Liaison Chrome Extension",
+  "version": "0.0.0",
+  "manifest_version": 2,
+  "description": "Liaison Sample Chrome Extension",
+  "content_scripts": [
+    {
+      "matches": [ "*://*/*" ],
+      "js": [ "js/contentscript.js" ],
+      "run_at": "document_start"
+    }
+  ],
+  "background": {
+    "scripts": [ "js/background.js" ]
+  },
+  "options_page": "options.html",
+  "permissions": [ "background" ]
+}
+
