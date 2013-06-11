@@ -3,24 +3,6 @@
  */
 /*global LiaisonExt: false, chrome: false, console: false */
 
-(function (exports) {
-
-  'use strict';
-
-  exports.LiaisonExt = (function () {
-
-    return {
-
-      sendResponse: function (chrome, request, callback) {
-
-        chrome.runtime.sendMessage(request, callback);
-      }
-    };
-
-  }());
-
-}(window));
-
 (function (LiaisonExt, chrome) {
 
   'use strict';

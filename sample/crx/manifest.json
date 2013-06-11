@@ -6,12 +6,18 @@
   "content_scripts": [
     {
       "matches": [ "*://*/*" ],
-      "js": [ "js/contentscript.js" ],
+      "js": [
+        "js/liaison.cs.min.js",
+        "js/contentscript.js"
+      ],
       "run_at": "document_start"
     }
   ],
   "background": {
-    "scripts": [ "js/background.js" ]
+    "scripts": [
+      "js/liaison.bg.min.js",
+      "js/background.js"
+    ]
   },
   "options_page": "options.html",
   "permissions": [ "background" ]

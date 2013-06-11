@@ -1,2 +1,4 @@
 /node_modules/
 /dist/
+/sample/crx/js/liaison.*
+/sample/js/liaison.*

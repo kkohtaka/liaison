@@ -52,7 +52,10 @@
           'sample/**/*.js',
           'Gruntfile.js'
         ],
-        exclude: [ 'sample/js/liaison.js', '**/vendor/*.js' ],
+        exclude: [
+          'sample/**/liaison.*js',
+          '**/vendor/*.js'
+        ],
         directives: {
           indent: 2,
           browser: true,
@@ -66,8 +69,19 @@
       },
       uglify: {
         dist: {
+          options: {
+            sourceMap: function (fileName) {
+              return fileName.replace('.js', '.map');
+            },
+            sourceMappingURL: function (fileName) {
+              return fileName.replace('dist/', '').replace('.js', '.map');
+            }
+          },
           files: {
-            'dist/liaison.js': [ 'src/**/*.js' ]
+            'dist/liaison.min.js': [ 'src/liaison.js' ],
+            'dist/liaison.bg.min.js': [ 'src/liaison.bg.js' ],
+            'dist/liaison.cs.min.js': [ 'src/liaison.cs.js' ],
+            'dist/liaison.ext.min.js': [ 'src/liaison.ext.js' ]
           }
         },
         options: {
@@ -80,8 +94,14 @@
             {
               expand: true,
               cwd: 'dist/',
-              src: '**/*.js',
+              src: 'liaison.min.*',
               dest: 'sample/js/'
+            },
+            {
+              expand: true,
+              cwd: 'dist/',
+              src: 'liaison.*.min.*',
+              dest: 'sample/crx/js/'
             }
           ]
         }
