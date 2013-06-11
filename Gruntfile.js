@@ -35,7 +35,7 @@
       regarde: {
         src: {
           files: [ 'src/**/*.js' ],
-          tasks: [ 'jslint', 'build', 'livereload' ]
+          tasks: [ 'jslint', 'build', 'livereload', 'jsdoc' ]
         },
         sample: {
           files: [ 'sample/**/*.js' ],
@@ -105,6 +105,15 @@
             }
           ]
         }
+      },
+      jsdoc: {
+        dist: {
+          src: [ 'src/*.js' ],
+          options: {
+            private: false,
+            destination: 'doc'
+          }
+        }
       }
     });
 
@@ -112,6 +121,7 @@
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-livereload');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-jsdoc');
     grunt.loadNpmTasks('grunt-jslint');
     grunt.loadNpmTasks('grunt-regarde');
 
@@ -121,6 +131,7 @@
       'livereload-start',
       'jslint',
       'build',
+      'jsdoc',
       'connect',
       'regarde'
     ]);

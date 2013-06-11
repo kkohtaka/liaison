@@ -8,10 +8,24 @@
 
   'use strict';
 
+  /**
+   * @namespace LiaisonExt
+   */
   exports.LiaisonExt = (function () {
 
     return {
 
+      /**
+       * @callback LiaisonExt.ResponseListener
+       * @param {Object} response
+       */
+
+      /**
+       * @alias LiaisonExt.sendResponse
+       * @param {ChromeExtension} chrome
+       * @param {Object} request
+       * @param {LiaisonExt.ResponseListener} callback
+       */
       sendResponse: function (chrome, request, callback) {
 
         chrome.runtime.sendMessage(request, callback);
