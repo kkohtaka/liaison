@@ -20,6 +20,9 @@
     ]
   },
   "options_page": "options.html",
-  "permissions": [ "background" ]
+  "permissions": [ "background" ],
+  "web_accessible_resources": [
+    "js/liaison.cs.min.map"
+  ]
 }
 

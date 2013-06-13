@@ -93,14 +93,33 @@
           files: [
             {
               expand: true,
+              cwd: 'src/',
+              src: 'liaison*.js',
+              dest: 'dist'
+            }
+          ]
+        },
+        sample: {
+          files: [
+            {
+              expand: true,
               cwd: 'dist/',
-              src: 'liaison.min.*',
+              src: [
+                'liaison.min.map',
+                'liaison.min.js',
+                'liaison.js'
+              ],
               dest: 'sample/js/'
             },
             {
               expand: true,
               cwd: 'dist/',
-              src: 'liaison.*.min.*',
+              src: [
+                'liaison.*.min.map',
+                'liaison.*.min.js',
+                'liaison.*.js',
+                '!liaison.min.js'
+              ],
               dest: 'sample/crx/js/'
             }
           ]
